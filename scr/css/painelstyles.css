@@ -1,0 +1,231 @@
+:root {
+    --primary-roxo: #322d4b;
+    --secondary-roxo: #6645ad;
+    --roxo-button: #280081;
+    --darkblue: #272e48;
+    --dark: #1c233d;
+    --darkbody: #0f172a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    font-family: "Product Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: var(--darkbody);
+}
+
+.sidebar {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--darkblue);
+    overflow-x: hidden;
+    transition: 0.3s;
+
+
+}
+
+#userEmail {
+    color: #fff;
+}
+
+.sidebar a {
+    transition: 0.2s;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #6a7dd6;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: white;
+
+    background-color: var(--secondary-roxo);
+}
+
+
+.navbar {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: var(--darkblue);
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: var(--secondary-roxo);
+}
+
+
+.content {
+    margin-left: 250px;
+    padding: 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 20;
+    justify-content: space-between;
+}
+
+img {
+
+    width: 60px;
+}
+
+ul {
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+.menu {
+    visibility: hidden;
+}
+
+i {
+    color: #6a7dd6;
+    font-size: 30px;
+}
+
+.a-item i {
+    font-size: 20px;
+}
+
+.container--cards {
+    display: flex;
+    gap: 55px;
+}
+
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    flex-direction: column;
+    text-align: center;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, #f1f5f9 0px 0px 0px ;
+    border-radius: 10px;
+    background-color: var(--darkblue);
+    height: 190px;
+    width: 218px;
+    
+}
+
+.card-icon {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   height: 65px;
+   width: 70px;
+   border-radius: 10px;
+    background-color: var(--dark);
+}
+.card:hover {
+
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, var(--secondary-roxo) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+     transform: scale(1.2, 1.2);
+}
+.perfil {
+    transition: 0.2s;
+    width: 35px;
+    margin: 0 50px 0;
+    border-radius: 70px;
+}
+
+.perfil:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.logo {
+    width: 140px;
+}
+
+/* styles.css */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    overflow: auto;
+}
+
+.modal-content {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background-color: var(--dark);
+    margin: 10% auto;
+    padding: 40px;
+
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+hr {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+@media screen and (max-width: 768px) {
+
+    .sidebar {
+        left: -250px;
+    }
+
+    .menu {
+        visibility: visible;
+    }
+
+    .content {
+        margin-left: 10px;
+        padding: 25px;
+    }
+    .container--cards{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .card {
+        width: 350px;
+    }
+}

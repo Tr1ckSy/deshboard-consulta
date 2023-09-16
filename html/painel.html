@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../scr/css/painelstyles.css">
+    <title>Painel - Cyber Buscas</title>
+</head>
+
+<body>
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Seu Perfil</h2>
+            <p id="userEmail">Email: </p>
+            <p>Duração: 09/09/2099</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" class="side-bar" >
+                <img src="../Assets/1694616853362.png" class="logo" alt="">
+
+              
+            </a>
+            
+            <a href="#" class="a-item"><i class="bi bi-info-circle-fill"></i> Suporte</a>
+            
+            <a href="#" class="a-item"><i class="bi bi-telegram"></i> Telegram</a>
+           
+            <div class="menu">
+                <a href="#" onclick="toggleSidebar()"><i class="bi bi-list"></i></a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="#" onclick="toggleSidebar()"><i class="bi bi-list"></i></a>
+            </div>
+            <img  src="../Assets/photo_2022-12-28_07-26-42.jpg"   id="openModalBtn" class="perfil"  alt="">
+
+        </nav>
+        <div class="content">
+            <div class="container-modulos">
+                <div class="container--cards">
+                    <a href="Modulos/cpf.html">
+                        <div class="card">
+                        <div class="modulo-container">
+                            <div class="card-icon"><i class="bi bi-person-vcard-fill"></i></div>
+                        </div>
+                        <h3>CPF</h3>
+                        <p class="p--modulo">Consulta cpf</p>
+                    </div>
+                    </a>
+                    <a href="">
+                         <div class="card">
+                        <div class="modulo-container">
+                            <div class="card-icon"><i class="bi bi-car-front-fill"></i></div>
+                        </div>
+                        <h3>PLACA</h3>
+                        <p>Consulta placa</p>
+                    </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                        <div class="modulo-container">
+                            <div class="card-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        </div>
+                        <h3>CEP</h3>
+                        <p>Busca cep</p>
+                    </div>
+                    </a>
+                    <a href="">
+                        <div class="card">
+                        <div class="modulo-container">
+                            <div class="card-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        </div>
+                        <h3>BIN</h3>
+                        <p>Gen bin</p>
+                    </div>
+                    </a>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth-compat.js"></script>
+    <script>
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCohNzeuR9C2j2VH2OkyR3vC6b2xuI6Tf8",
+        authDomain: "trackfind-5e413.firebaseapp.com",
+        projectId: "trackfind-5e413",
+        storageBucket: "trackfind-5e413.appspot.com",
+        messagingSenderId: "1061150730326",
+        appId: "1:1061150730326:web:86b5c0808f05328230b3f7",
+        measurementId: "G-1R137SYDVL"
+    };
+
+   firebase.initializeApp(firebaseConfig);
+
+        // Aguarda até que o usuário esteja autenticado
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // Usuário autenticado, você pode acessar user aqui
+                const userEmailElement = document.getElementById('userEmail');
+                userEmailElement.textContent = "Email: " + user.email;
+            } else {
+                // O usuário não está autenticado, lide com isso de acordo com a lógica de sua aplicação
+            }
+        });
+
+        var modal = document.getElementById('profileModal');
+        var openBtn = document.getElementById('openModalBtn');
+        var closeBtn = document.getElementById('closeModalBtn');
+
+        openBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        function toggleSidebar() {
+            var sidebar = document.querySelector(".sidebar");
+            if (sidebar.style.left === "0px" || sidebar.style.left === "") {
+                sidebar.style.left = "-250px";
+            } else {
+                sidebar.style.left = "0px";
+            }
+        }
+        var user = firebase.auth().currentUser;
+
+// Verifica se o usuário está autenticado
+if (user) {
+  // Remove a conta do usuário
+  user.delete().then(function() {
+    // Redireciona para a tela desejada após a exclusão da conta
+    window.location.href = 'https://example.com'; // Substitua 'https://example.com' pela URL da sua tela desejada
+  }).catch(function(error) {
+    // Tratamento de erros ao remover a conta
+    console.error(error);
+  });
+} else {
+  // O usuário não está logado ou autenticado
+  // Lide com isso de acordo com a lógica de sua aplicação
+}
+    </script>
+</body>
+
+</html>

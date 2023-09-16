@@ -1,0 +1,144 @@
+:root {
+    --primary-roxo: #322d4b;
+    --secondary-roxo: #6645ad;
+    --roxo-button: #280081;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/Assets/1308898.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+i {
+
+    color: var(--secondary-roxo);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: var(--primary-roxo);
+    width: 28%;
+    height: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+
+
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.input-group-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    padding-left: 30px;
+}
+
+.input-group i {
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    padding: 10px 130px;
+    border-radius: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: var(--secondary-roxo);
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: var(--roxo-button);
+}
+
+.form--container {
+    margin-bottom: 60px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    width: 300px;
+    margin: 20px auto;
+}
+
+
+.styled-input {
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--primary-roxo);
+    outline: none;
+    /* Remove a borda ao clicar no input */
+    transition: border-color 0.2s;
+    /* Adiciona uma transição suave na cor da borda */
+}
+
+/* Estilizando o input quando estiver focado (hover) */
+.styled-input:hover,
+.styled-input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Cor da borda ao focar ou passar o mouse */
+}
+
+
+img {
+
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 60%;
+        width: 90%;
+    }
+
+    img {
+        width: 40%;
+    }
+}

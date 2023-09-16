@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="scr/css/style.css">
+    <title>Cyber buscas - Consulta cpf</title>
+</head>
+<style>
+    :root {
+    --primary-roxo: #322d4b;
+    --secondary-roxo: #6645ad;
+    --roxo-button: #280081;
+     --darkbody: #0f172a;
+     --darkblue: #272e48;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: var(--secondary-roxo);
+}
+
+i {
+
+    color: var(--secondary-roxo);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: var(--primary-roxo);
+    width: 28%;
+    height: 40%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+
+
+}
+
+
+.input-group-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.input-group i {
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    padding: 10px 130px;
+    border-radius: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: var(--secondary-roxo);
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: var(--roxo-button);
+}
+
+.form--container {
+ 
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    width: 300px;
+    margin: 20px auto;
+}
+
+
+.styled-input {
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: 0.1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--primary-roxo);
+    outline: none;
+    /* Remove a borda ao clicar no input */
+    transition: border-color 0.2s;
+    /* Adiciona uma transição suave na cor da borda */
+}
+
+/* Estilizando o input quando estiver focado (hover) */
+.styled-input:hover,
+.styled-input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Cor da borda ao focar ou passar o mouse */
+}
+
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="bolas">
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+        </div>
+        <div class="form--container">
+        
+            <form id="login--form">
+
+                <p>Insira o cpf que deseja consulta</p>
+                <div class="input-group">
+                    <label for="email"></label>
+                    <input type="text" id="email" class="styled-input" placeholder="Ex:13964688622"  required>
+                </div>
+               
+                <div class="input-group-button">
+                    <button>Consulta</button>
+                </div>
+                <p id="error-message" style="color: red;"></p>
+            </form>
+
+    </div>
